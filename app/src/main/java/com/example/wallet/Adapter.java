@@ -14,6 +14,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.wallet.DataBase.GirdiAlma;
+
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.CardViewNesneTutucu> {
@@ -60,7 +62,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardViewNesneTutucu> {
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext,tip.getTipAd()+" seçildi",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(view.getContext(),GirdiAlma.class);
+                Intent intent = new Intent(view.getContext(), GirdiAlma.class);
                 mContext.startActivity(intent);
             }
         });

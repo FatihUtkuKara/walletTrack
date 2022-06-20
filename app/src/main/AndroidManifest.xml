@@ -14,13 +14,13 @@
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
-            android:name=".GirdiAlma"
+            android:name=".DataBase.GirdiAlma"
             android:exported="false" />
         <activity
             android:name=".GiderActivity"
             android:exported="false" />
         <activity
-            android:name=".GelirActivity"
+            android:name=".DataBase.GelirActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
