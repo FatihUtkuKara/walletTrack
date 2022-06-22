@@ -1,16 +1,22 @@
 package com.example.wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.wallet.DataBase.DatabaseProvider;
 import com.example.wallet.DataBase.WalletDatabase;
 import com.example.wallet.model.Gelir;
+import com.example.wallet.viewModel.GelirViewModel;
+
+import java.util.List;
 
 public class GelirActivity extends AppCompatActivity {
         public EditText textGelir;
@@ -21,8 +27,9 @@ public class GelirActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gelir);
-        database = DatabaseProvider.getDatabase(getApplicationContext());
         textGelir = findViewById(R.id.textGelir);
+        database = DatabaseProvider.getDatabase(getApplicationContext());
+
 
         }
 
@@ -41,7 +48,7 @@ public class GelirActivity extends AppCompatActivity {
 
         public void tamam(View view) {
 
-        geliriKaydet(textGelir.getText().toString());
+         geliriKaydet(textGelir.getText().toString());
         //Toast.makeText(this,database2.gelirGiderDao().getGelirList().,Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(GelirActivity.this, MainActivity.class);
         startActivity(intent);
