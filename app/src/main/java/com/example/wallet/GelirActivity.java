@@ -49,6 +49,5 @@ public class GelirActivity extends AppCompatActivity {
 
         public void tamam(View view) {
             geliriKaydet(textGelir.getText().toString());
-        Intent intent = new Intent(GelirActivity.this, MainActivity.class);
-        startActivity(intent);
+            finish();
     }}

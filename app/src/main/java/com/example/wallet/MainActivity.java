@@ -43,16 +43,18 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < giders.size() ; i++){
                     bakiye = bakiye- giders.get(i).giderAmount;
                 }
-                text1.setText("Bakiyeniz:"+ bakiye);
+                String explanation = getString(R.string.net_balance) + " " + bakiye;
+                text1.setText(explanation);
             }
         });
         gelirViewModel.getGelirs(getApplicationContext()).observe(this, new Observer<List<Gelir>>() {
             @Override
-            public void onChanged(List<Gelir> gelirGiders) {
-                for (int i = 0; i < gelirGiders.size(); i++) {
-                    bakiye += gelirGiders.get(i).amount;
+            public void onChanged(List<Gelir> gelirs) {
+                for (int i = 0; i < gelirs.size(); i++) {
+                    bakiye += gelirs.get(i).amount;
                 }
-                text1.setText("Bakiyeniz:" + bakiye);
+                String explanation = getString(R.string.net_balance) + " " + bakiye;
+                text1.setText(explanation);
             }
 
 

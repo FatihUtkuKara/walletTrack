@@ -47,8 +47,7 @@ public class GiderAl extends AppCompatActivity {
          public void tamam2(View view) {
         gideriKaydet(textGider.getText().toString(),gelenTip);
 
-        Intent intent = new Intent(GiderAl.this, MainActivity.class);
-        startActivity(intent);
+        finish();
 
     }
 }
