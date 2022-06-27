@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/drawable/circle.xml" value="0.1" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/drawable/gradient_background.xml" value="0.2545" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_ayrinti.xml" value="0.25" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_gelir.xml" value="0.2359375" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_gider.xml" value="0.264" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_gider_al.xml" value="0.25" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_girdi_alma.xml" value="0.25" />
-        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/cardtasarim.xml" value="0.25" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/fragment_gelir.xml" value="0.264" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/gidertasarim.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_gelir.xml" value="0.1" />
       </map>

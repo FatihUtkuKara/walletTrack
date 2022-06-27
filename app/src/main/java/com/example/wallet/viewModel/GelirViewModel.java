@@ -15,7 +15,14 @@ import java.util.List;
 public class GelirViewModel extends ViewModel {
     private LiveData<List<Gelir>> gelirs;
     private LiveData<List<Gider>> giders;
+    private LiveData<List<Gider>> giderTipi;
     public WalletDatabase database;
+
+    public LiveData<List<Gider>> getGiderTipi(Context context) {
+        database = DatabaseProvider.getDatabase(context);
+        giderTipi = database.walletDao().getGiders();
+        return giderTipi;
+    }
 
     public LiveData<List<Gelir>> getGelirs(Context context) {
         database = DatabaseProvider.getDatabase(context);

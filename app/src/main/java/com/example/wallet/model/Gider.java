@@ -10,4 +10,6 @@ public class Gider {
     public int giderId;
     @ColumnInfo(name = "giderAmount")
     public int giderAmount;
+    @ColumnInfo(name= "giderTipi")
+    public String giderTipi;
 }

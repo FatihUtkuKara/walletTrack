@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.wallet.model.Gelir;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     int bakiye;
     private GelirViewModel gelirViewModel;
     private GelirViewModel giderViewModel ;
+    private int progr = 0 ;
+    public ProgressBar progressBar;
 
 
     @Override
@@ -28,14 +31,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         gelirViewModel = new ViewModelProvider(this).get(GelirViewModel.class);
         giderViewModel = new ViewModelProvider(this).get(GelirViewModel.class);
+        AyrintiActivity z = new AyrintiActivity();
         text1 = findViewById(R.id.text1);
+        progressBar = findViewById(R.id.progress_bar);
 
+        updateProgressBar(z.oran);
 
         giderViewModel.getGiders(getApplicationContext()).observe(this, new Observer<List<Gider>>() {
             @Override
             public void onChanged(List<Gider> giders) {
                 for (int i = 0; i < giders.size() ; i++){
-                    bakiye = bakiye+ giders.get(i).giderAmount;
+                    bakiye = bakiye- giders.get(i).giderAmount;
                 }
                 text1.setText("Bakiyeniz:"+ bakiye);
             }
@@ -54,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private void updateProgressBar(int oran){
+        progressBar.setProgress(oran);
+
+
+    }
+
     public void gelir(View view){
         Intent yeniIntent = new Intent(MainActivity.this, GelirActivity.class);
         startActivity(yeniIntent);
@@ -61,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
 }
     public void gider(View view){
         Intent yeniIntent = new Intent(MainActivity.this,GiderActivity.class);
+        startActivity(yeniIntent);
+
+    }
+
+    public void ayrinti(View view){
+        Intent yeniIntent = new Intent(MainActivity.this,AyrintiActivity.class);
         startActivity(yeniIntent);
 
     }

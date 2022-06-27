@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class GiderActivity extends AppCompatActivity {
     private RecyclerView rv;
-    private ArrayList<String> giderlerList;
+    private ArrayList<GiderTipleri> giderlerList;
     private Adapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +22,20 @@ public class GiderActivity extends AppCompatActivity {
 
         rv.setLayoutManager(new LinearLayoutManager(this));
 
+
+        GiderTipleri g1 = new GiderTipleri("Beslenme","salad");
+        GiderTipleri g2 = new GiderTipleri("Eğlence","laugh");
+        GiderTipleri g3 = new GiderTipleri("Spor","sports");
+        GiderTipleri g4 = new GiderTipleri("Eğitim","education");
+        GiderTipleri g5 = new GiderTipleri("Ev","house");
+
         giderlerList = new ArrayList<>();
-        giderlerList.add("Beslenme");
-        giderlerList.add("Eğlence");
-        giderlerList.add("Spor");
-        giderlerList.add("Eğitim");
-        giderlerList.add("Ev");
+        giderlerList.add(g1);
+        giderlerList.add(g2);
+        giderlerList.add(g3);
+        giderlerList.add(g4);
+        giderlerList.add(g5);
+
 
         adapter = new Adapter(this,giderlerList);
 

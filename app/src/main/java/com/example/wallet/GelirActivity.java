@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wallet.DataBase.DatabaseProvider;
 import com.example.wallet.DataBase.WalletDatabase;
@@ -47,9 +48,7 @@ public class GelirActivity extends AppCompatActivity {
         }
 
         public void tamam(View view) {
-
-         geliriKaydet(textGelir.getText().toString());
-        //Toast.makeText(this,database2.gelirGiderDao().getGelirList().,Toast.LENGTH_SHORT).show();
+            geliriKaydet(textGelir.getText().toString());
         Intent intent = new Intent(GelirActivity.this, MainActivity.class);
         startActivity(intent);
     }}

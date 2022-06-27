@@ -14,20 +14,29 @@
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
+            android:name=".AyrintiActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"/>
+        <activity
             android:name=".GiderAl"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name=".GiderActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name=".GelirActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name=".MainActivity2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

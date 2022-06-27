@@ -4,30 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2B9C27B0"
+    android:background="@drawable/gradient_background"><![CDATA[
     tools:context=".MainActivity">
+
+
+
+
+
+
+
+    ]]>
 
     <Button
         android:id="@+id/gelir1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="160dp"
+        android:layout_width="97dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginEnd="73dp"
         android:onClick="gelir"
         android:text="Gelir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
 
     <Button
         android:id="@+id/gider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="160dp"
+        android:layout_width="97dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="213dp"
         android:onClick="gider"
         android:text="Gider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
 
     <TextView
         android:id="@+id/text1"
@@ -37,6 +45,38 @@
         android:layout_marginTop="238dp"
         android:layout_marginEnd="184dp"
         android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ayrintiButon"
+        android:layout_width="227dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="73dp"
+        android:onClick="ayrinti"
+        android:text="Ayrıntılar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gelir1"
+        app:layout_constraintVertical_bias="0.687" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="248dp"
+        android:layout_height="241dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        tools:progress="60"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="99dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

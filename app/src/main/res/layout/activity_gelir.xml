@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2C9C27B0"
-    tools:context=".GelirActivity">
+    android:background="@drawable/gradient_background">
+
+    tools:context=".GelirActivity"
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="412dp"
@@ -23,7 +24,12 @@
             android:ems="10"
             android:hint="Gelirinizi girin"
             android:inputType="number"
-            android:textColorHint="#9C27B0"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#B4E197"
+            android:textColorHint="#B4E197"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -35,11 +41,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
+            android:backgroundTint="#B4E197"
             android:onClick="tamam"
             android:text="Tamam"
+            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textGelir" />
+            app:layout_constraintTop_toBottomOf="@+id/textGelir"
+            app:rippleColor="#B4E197" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,10 +17,10 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.CardTasarımNesneleriniTutucu> {
     private Context mContext;
-    private List<String>giderTipiList;
+    private List<GiderTipleri>giderTipiList;
 
 
-    public Adapter(Context mContext, List<String> giderTipiList) {
+    public Adapter(Context mContext, List<GiderTipleri> giderTipiList) {
         this.mContext = mContext;
         this.giderTipiList = giderTipiList;
     }
@@ -36,15 +36,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardTasarımNesnelerin
 
     @Override
     public void onBindViewHolder(@NonNull CardTasarımNesneleriniTutucu holder, int position) {
-        final String gider = giderTipiList.get(position);
-
-        holder.giderTipi.setText(gider);
-
+        GiderTipleri giderTipleri = giderTipiList.get(position);
+        holder.giderTipi.setText(giderTipleri.getGiderAdı());
+        holder.icon.setImageResource(mContext.getResources()
+                .getIdentifier(giderTipleri.getIcon(),"drawable",mContext.getPackageName()));
         holder.cardViewId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, gider +" Seçildi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, giderTipleri.getGiderAdı() +" Seçildi", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, GiderAl.class);
+
+                intent.putExtra("giderTip",giderTipleri.getGiderAdı());
                 mContext.startActivity(intent);
             }
         });

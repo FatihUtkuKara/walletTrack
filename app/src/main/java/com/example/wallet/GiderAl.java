@@ -16,17 +16,21 @@ public class GiderAl extends AppCompatActivity {
        public EditText textGider;
        Gider gider = new Gider();
        public WalletDatabase database2;
+       String gelenTip;
+
 
      @Override
           protected void onCreate(Bundle savedInstanceState) {
               super.onCreate(savedInstanceState);
               setContentView(R.layout.activity_gider_al);
               textGider = findViewById(R.id.textGider);
+              gelenTip = getIntent().getStringExtra("giderTip");
               database2 = DatabaseProvider.getDatabase(getApplicationContext());
           }
 
-          public void gideriKaydet(String gider2){
+          public void gideriKaydet(String gider2, String giderTipi2){
          gider.giderAmount = Integer.parseInt(gider2);
+         gider.giderTipi = giderTipi2;
          Thread dbbThread = new Thread(new Runnable() {
              @Override
              public void run() { database2.walletDao().insertGider(gider);}
@@ -41,7 +45,7 @@ public class GiderAl extends AppCompatActivity {
 
 
          public void tamam2(View view) {
-        gideriKaydet(textGider.getText().toString());
+        gideriKaydet(textGider.getText().toString(),gelenTip);
 
         Intent intent = new Intent(GiderAl.this, MainActivity.class);
         startActivity(intent);
