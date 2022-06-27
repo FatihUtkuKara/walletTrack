@@ -1,6 +1,7 @@
 package com.example.wallet;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,21 +12,26 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wallet.model.Gider;
 import com.example.wallet.viewModel.GelirViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GiderAdapter extends  RecyclerView.Adapter<GiderAdapter.CardViewTasarimNesneleriniTutucu> {
     private Context mContext;
-    private List<Giderler> giderList;
+    private List<Gider> giderList = new ArrayList<Gider>();
 
 
-    public GiderAdapter(Context mContext, List<Giderler> giderList) {
+    public GiderAdapter(Context mContext) {
         this.mContext = mContext;
-        this.giderList = giderList;
     }
 
-
+    public void setGiders(List<Gider> giderList){
+        this.giderList.clear();
+        this.giderList.addAll(giderList);
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -37,12 +43,12 @@ public class GiderAdapter extends  RecyclerView.Adapter<GiderAdapter.CardViewTas
 
     @Override
     public void onBindViewHolder(@NonNull CardViewTasarimNesneleriniTutucu holder, int position) {
-            Giderler gider = giderList.get(position);
             // String fx = String.valueOf(gider.getTipBakiye());
-            holder.textViewGiderTip.setText(gider.getGiderAdı());
-            holder.textViewSonuc.setText(String.valueOf(gider.getTipBakiye()));
-            holder.imageViewGiderTip.setImageResource(mContext.getResources()
-                    .getIdentifier(gider.getGiderGörsel(), "drawable",mContext.getPackageName()));
+            holder.textViewGiderTip.setText(giderList.get(position).giderTipi);
+            holder.textViewSonuc.setText(String.valueOf(giderList.get(position).giderAmount));
+            if(giderList.get(position).giderTipi.equals("Spor")){
+                holder.imageViewGiderTip.setBackgroundResource(R.drawable.sports);
+            }
     }
 
     @Override

@@ -18,6 +18,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public TextView text1;
+    int totalGelir;
+    int totalGider;
     int bakiye;
     private GelirViewModel gelirViewModel;
     private GelirViewModel giderViewModel ;
@@ -31,17 +33,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         gelirViewModel = new ViewModelProvider(this).get(GelirViewModel.class);
         giderViewModel = new ViewModelProvider(this).get(GelirViewModel.class);
-        AyrintiActivity z = new AyrintiActivity();
         text1 = findViewById(R.id.text1);
         progressBar = findViewById(R.id.progress_bar);
-
-        updateProgressBar(z.oran);
 
         giderViewModel.getGiders(getApplicationContext()).observe(this, new Observer<List<Gider>>() {
             @Override
             public void onChanged(List<Gider> giders) {
                 for (int i = 0; i < giders.size() ; i++){
                     bakiye = bakiye- giders.get(i).giderAmount;
+                    totalGider += giders.get(i).giderAmount;
+                    updateProgressBar();
                 }
                 String explanation = getString(R.string.net_balance) + " " + bakiye;
                 text1.setText(explanation);
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Gelir> gelirs) {
                 for (int i = 0; i < gelirs.size(); i++) {
                     bakiye += gelirs.get(i).amount;
+                    totalGelir += gelirs.get(i).amount;
+                    updateProgressBar();
                 }
                 String explanation = getString(R.string.net_balance) + " " + bakiye;
                 text1.setText(explanation);
@@ -62,10 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    private void updateProgressBar(int oran){
-        progressBar.setProgress(oran);
-
-
+    private void updateProgressBar(){
+        int rate = (int) ((float) totalGider / (float) totalGelir * 100f);
+        progressBar.setProgress(rate);
     }
 
     public void gelir(View view){
