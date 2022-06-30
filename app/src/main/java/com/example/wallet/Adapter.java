@@ -23,6 +23,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardTasarımNesnelerin
     public Adapter(Context mContext, List<GiderTipleri> giderTipiList) {
         this.mContext = mContext;
         this.giderTipiList = giderTipiList;
+
     }
 
     @NonNull
@@ -44,7 +45,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardTasarımNesnelerin
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, giderTipleri.getGiderAdı() +" Seçildi", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(mContext, GiderAl.class);
+                Intent intent = new Intent(mContext, GiderAlActivity.class);
 
                 intent.putExtra("giderTip",giderTipleri.getGiderAdı());
                 mContext.startActivity(intent);

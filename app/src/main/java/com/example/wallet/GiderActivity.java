@@ -28,6 +28,9 @@ public class GiderActivity extends AppCompatActivity {
         GiderTipleri g3 = new GiderTipleri("Spor","sports");
         GiderTipleri g4 = new GiderTipleri("Eğitim","education");
         GiderTipleri g5 = new GiderTipleri("Ev","house");
+        GiderTipleri g6 = new GiderTipleri("Sağlık","health");
+        GiderTipleri g7 = new GiderTipleri("Ulaşım","transport");
+        GiderTipleri g8 = new GiderTipleri("Giyim","clothes");
 
         giderlerList = new ArrayList<>();
         giderlerList.add(g1);
@@ -35,6 +38,9 @@ public class GiderActivity extends AppCompatActivity {
         giderlerList.add(g3);
         giderlerList.add(g4);
         giderlerList.add(g5);
+        giderlerList.add(g6);
+        giderlerList.add(g7);
+        giderlerList.add(g8);
 
 
         adapter = new Adapter(this,giderlerList);

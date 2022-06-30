@@ -17,6 +17,8 @@ import com.example.wallet.viewModel.GelirViewModel;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 public class AyrintiActivity extends AppCompatActivity {
@@ -30,13 +32,25 @@ int giderEglence;
 int giderEv;
 int giderSpor;
 int giderEgitim;
+int giderUlasım;
+int giderGiyim;
+int giderSaglık;
 String giderTipi;
 public TextView textViewGider;
 public TextView textViewGelir;
 int gelirBakiye;
 int giderBakiye;
+int yüzdeEglence;
+int yüzdeEv;
+int yüzdeSpor;
+int yüzdeBeslenme;
+int yüzdeEgitim;
+int yüzdeUlasım;
+int yüzdeGiyim;
+int yüzdeSaglık;
 int toplamBakiye;
 int oran;
+private ArrayList<Giderler> giderlerList;
 
 
     @Override
@@ -58,15 +72,71 @@ int oran;
         rv2.setAdapter(adapter);
 
 
+
         tipModel.getGiders(getApplicationContext()).observe(this, new Observer<List<Gider>>() {
             @Override
             public void onChanged(List<Gider> giders) {
                 for (int i = 0; i < giders.size(); i++) {
                     giderBakiye = giderBakiye + giders.get(i).giderAmount;
 
+                    if (giders.get(i).giderTipi.equals("Eğlence")){
+                        giderEglence= giderEglence+giders.get(i).giderAmount;
+                    }
+                    else if (giders.get(i).giderTipi.equals("Ev")){
+                        giderEv= giderEv+giders.get(i).giderAmount;
+                    }
+                    else if (giders.get(i).giderTipi.equals("Spor")){
+                        giderSpor= giderSpor+giders.get(i).giderAmount;
+
+                    }
+                    else if (giders.get(i).giderTipi.equals("Eğitim")){
+                        giderEgitim= giderEgitim+giders.get(i).giderAmount;
+                    }
+                    else if (giders.get(i).giderTipi.equals("Beslenme")){
+                        giderBeslenme= giderBeslenme+giders.get(i).giderAmount;
+                    }
+                    else if (giders.get(i).giderTipi.equals("Sağlık")){
+                        giderSaglık= giderSaglık+giders.get(i).giderAmount;
+                    }
+                    else if (giders.get(i).giderTipi.equals("Ulaşım")){
+                        giderUlasım= giderUlasım+giders.get(i).giderAmount;
+                    }
+                    else if (giders.get(i).giderTipi.equals("Giyim")){
+                        giderGiyim= giderGiyim+giders.get(i).giderAmount;
+                    }
+
                 }
+                yüzdeEglence = (giderEglence*100)/giderBakiye;
+                yüzdeEv = (giderEv*100)/giderBakiye;
+                yüzdeSpor= (giderSpor*100)/giderBakiye;
+                yüzdeEgitim = (giderEgitim*100)/giderBakiye;
+                yüzdeBeslenme = (giderBeslenme*100)/giderBakiye;
+                yüzdeUlasım = (giderUlasım*100)/giderBakiye;
+                yüzdeSaglık = (giderSaglık*100)/giderBakiye;
+                yüzdeGiyim = (giderGiyim*100)/giderBakiye;
+
+
                 textViewGider.setText("" + giderBakiye);
-                adapter.setGiders(giders);
+                Giderler g1=  new Giderler("Eğlence","eglence",giderEglence,yüzdeEglence);
+                Giderler g2=  new Giderler("Eğitim","egitim",giderEgitim,yüzdeEgitim);
+                Giderler g3=  new Giderler("Ev","ev",giderEv,yüzdeEv);
+                Giderler g4=  new Giderler("Beslenme","beslenme",giderBeslenme,yüzdeBeslenme);
+                Giderler g5=  new Giderler("Spor","spor",giderSpor,yüzdeSpor);
+                Giderler g6=  new Giderler("Sağlık","saglık",giderSaglık,yüzdeSaglık);
+                Giderler g7=  new Giderler("Ulaşım","ulasım",giderUlasım,yüzdeUlasım);
+                Giderler g8=  new Giderler("Giyim","giyim",giderGiyim,yüzdeGiyim);
+
+                giderlerList =new ArrayList<>();
+                giderlerList.add(g1);
+                giderlerList.add(g2);
+                giderlerList.add(g3);
+                giderlerList.add(g4);
+                giderlerList.add(g5);
+                giderlerList.add(g6);
+                giderlerList.add(g7);
+                giderlerList.add(g8);
+
+                adapter.setGiders(giderlerList);
             }
         });
 

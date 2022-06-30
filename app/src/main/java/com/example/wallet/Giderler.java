@@ -4,10 +4,11 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-public class Giderler {
+public class Giderler implements Comparable<Giderler> {
     private String giderAdı;
     private String giderGörsel;
     private int tipBakiye;
+    int yüzde;
 
 
 
@@ -38,9 +39,23 @@ public class Giderler {
         this.tipBakiye = tipBakiye;
     }
 
-    public Giderler(String giderAdı, String giderGörsel, int tipBakiye) {
+    public int getYüzde() {
+        return yüzde;
+    }
+
+    public void setYüzde(int yüzde) {
+        this.yüzde = yüzde;
+    }
+
+    public Giderler(String giderAdı, String giderGörsel, int tipBakiye, int yüzde) {
         this.giderAdı = giderAdı;
         this.giderGörsel = giderGörsel;
         this.tipBakiye = tipBakiye;
+        this.yüzde = yüzde;
+    }
+
+    @Override
+    public int compareTo(Giderler o) {
+        return new Integer(this.tipBakiye).compareTo(o.tipBakiye);
     }
 }

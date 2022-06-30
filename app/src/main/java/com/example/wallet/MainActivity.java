@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     public TextView text1;
     int totalGelir;
     int totalGider;
-    int bakiye;
     private GelirViewModel gelirViewModel;
     private GelirViewModel giderViewModel ;
     private int progr = 0 ;
@@ -39,24 +38,24 @@ public class MainActivity extends AppCompatActivity {
         giderViewModel.getGiders(getApplicationContext()).observe(this, new Observer<List<Gider>>() {
             @Override
             public void onChanged(List<Gider> giders) {
+                totalGider = 0;
                 for (int i = 0; i < giders.size() ; i++){
-                    bakiye = bakiye- giders.get(i).giderAmount;
                     totalGider += giders.get(i).giderAmount;
                     updateProgressBar();
                 }
-                String explanation = getString(R.string.net_balance) + " " + bakiye;
+                String explanation = getString(R.string.net_balance) + " " + (totalGelir-totalGider);
                 text1.setText(explanation);
             }
         });
         gelirViewModel.getGelirs(getApplicationContext()).observe(this, new Observer<List<Gelir>>() {
             @Override
             public void onChanged(List<Gelir> gelirs) {
+                totalGelir = 0 ;
                 for (int i = 0; i < gelirs.size(); i++) {
-                    bakiye += gelirs.get(i).amount;
                     totalGelir += gelirs.get(i).amount;
                     updateProgressBar();
                 }
-                String explanation = getString(R.string.net_balance) + " " + bakiye;
+                String explanation = getString(R.string.net_balance) + " " + (totalGelir-totalGider);
                 text1.setText(explanation);
             }
 

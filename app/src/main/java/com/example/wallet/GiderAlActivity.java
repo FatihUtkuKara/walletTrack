@@ -12,7 +12,7 @@ import com.example.wallet.DataBase.DatabaseProvider;
 import com.example.wallet.DataBase.WalletDatabase;
 import com.example.wallet.model.Gider;
 
-public class GiderAl extends AppCompatActivity {
+public class GiderAlActivity extends AppCompatActivity {
        public EditText textGider;
        Gider gider = new Gider();
        public WalletDatabase database2;
