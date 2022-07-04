@@ -22,15 +22,23 @@ public class GiderActivity extends AppCompatActivity {
 
         rv.setLayoutManager(new LinearLayoutManager(this));
 
+        String fun = getString(R.string.fun);
+        String health = getString(R.string.health);
+        String clothes = getString(R.string.clothes);
+        String house = getString(R.string.house);
+        String education = getString(R.string.education);
+        String sport = getString(R.string.sport);
+        String transport = getString(R.string.transport);
+        String eating= getString(R.string.eating);
 
-        GiderTipleri g1 = new GiderTipleri("Beslenme","salad");
-        GiderTipleri g2 = new GiderTipleri("Eğlence","laugh");
-        GiderTipleri g3 = new GiderTipleri("Spor","sports");
-        GiderTipleri g4 = new GiderTipleri("Eğitim","education");
-        GiderTipleri g5 = new GiderTipleri("Ev","house");
-        GiderTipleri g6 = new GiderTipleri("Sağlık","health");
-        GiderTipleri g7 = new GiderTipleri("Ulaşım","transport");
-        GiderTipleri g8 = new GiderTipleri("Giyim","clothes");
+        GiderTipleri g1 = new GiderTipleri(eating,"salad");
+        GiderTipleri g2 = new GiderTipleri(fun,"laugh");
+        GiderTipleri g3 = new GiderTipleri(sport,"sports");
+        GiderTipleri g4 = new GiderTipleri(education,"education");
+        GiderTipleri g5 = new GiderTipleri(house,"house");
+        GiderTipleri g6 = new GiderTipleri(health,"health");
+        GiderTipleri g7 = new GiderTipleri(transport,"transport");
+        GiderTipleri g8 = new GiderTipleri(clothes,"clothes");
 
         giderlerList = new ArrayList<>();
         giderlerList.add(g1);

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,11 +24,14 @@ public class GelirActivity extends AppCompatActivity {
         public EditText textGelir;
         Gelir gelir = new Gelir();
         public WalletDatabase database;
+        private Button tamam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gelir);
+        tamam = findViewById(R.id.gelirButton);
+        tamam.setText(getString(R.string.okay));
         textGelir = findViewById(R.id.textGelir);
         database = DatabaseProvider.getDatabase(getApplicationContext());
 

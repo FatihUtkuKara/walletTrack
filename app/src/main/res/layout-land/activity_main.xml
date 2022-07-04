@@ -9,27 +9,25 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/gelir1"
-            android:layout_width="113dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="112dp"
-            android:layout_marginEnd="56dp"
-            android:layout_marginBottom="202dp"
+            android:layout_width="117dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="230dp"
             android:onClick="gelir"
             android:text="Gelir"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
         <Button
             android:id="@+id/gider"
-            android:layout_width="113dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="112dp"
+            android:layout_width="117dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="14dp"
             android:onClick="gider"
             android:text="Gider"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,44 +35,35 @@
 
         <TextView
             android:id="@+id/text1"
-            android:layout_width="129dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="248dp"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="169dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="184dp"
             android:autoText="true"
             android:text="TextView"
-            android:textAlignment="center"
             android:textColor="#000000"
-            android:textStyle="normal"
             app:autoSizeTextType="uniform"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.528"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
             android:id="@+id/progress_bar"
             style="?android:attr/progressBarStyle"
-            android:layout_width="248dp"
-            android:layout_height="241dp"
+            android:layout_width="249dp"
+            android:layout_height="206dp"
             android:layout_marginStart="98dp"
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="99dp"
             android:indeterminateOnly="false"
             android:progressDrawable="@drawable/circle"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:progress="60" />
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

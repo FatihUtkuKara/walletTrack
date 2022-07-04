@@ -1,4 +1,24 @@
 <resources>
     <string name="app_name">Cüzdan</string>
     <string name="net_balance">Bakiye : </string>
+    <string name="expense"> Gider </string>
+    <string name="income"> Gelir</string>
+    <string name="okay">Tamam</string>
+    <string name="fun">Eğlence</string>
+    <string name="clothes">Giyim</string>
+    <string name="house">Ev</string>
+    <string name="health">Sağlık</string>
+    <string name="sport">Spor</string>
+    <string name="education">Eğitim</string>
+    <string name="transport">Ulaşım</string>
+    <string name="eating">Beslenme</string>
+    <string name="expense_name">Gider Tipleri</string>
+    <string name="total_revenue">Toplam Gelir</string>
+    <string name="total_expense">Toplam Gider</string>
+    <string name="income_input">Gelirinizi Giriniz</string>
+    <string name="expense_input">Giderinizi Giriniz</string>
+
+
+
+
 </resources>

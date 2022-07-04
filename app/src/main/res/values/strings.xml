@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Wallet</string>
     <string name="net_balance">Balance : </string>
+    <string name="expense"> Expense </string>
+    <string name="income"> Income</string>
+    <string name="okay">Okay</string>
+    <string name="fun">Fun</string>
+    <string name="clothes">Clothes</string>
+    <string name="house">House</string>
+    <string name="health">Health</string>
+    <string name="sport">Sport</string>
+    <string name="education">Education</string>
+    <string name="transport">Transport</string>
+    <string name="eating">Eating</string>
+    <string name="expense_name">Types Of Expenses</string>i
+    <string name="total_revenue">Total Revenue</string>
+    <string name="total_expense">Total Expense</string>
+    <string name="income_input">Enter Your Income</string>
+    <string name="expense_input">Enter Your Expense</string>
+
+
 </resources>

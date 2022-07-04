@@ -27,6 +27,14 @@ public class GiderAdapter extends  RecyclerView.Adapter<GiderAdapter.CardViewTas
     private Context mContext;
     private List<Gider> giderList = new ArrayList<Gider>();
     private List<Giderler> giderlerList = new ArrayList<Giderler>();
+    String fun;
+    String eating;
+    String sport;
+    String education;
+    String clothes;
+    String health;
+    String transport;
+    String house;
 
 
     public GiderAdapter(Context mContext) {
@@ -63,32 +71,42 @@ public class GiderAdapter extends  RecyclerView.Adapter<GiderAdapter.CardViewTas
 
     @Override
     public void onBindViewHolder(@NonNull CardViewTasarimNesneleriniTutucu holder, int position) {
+
+            fun = mContext.getString(R.string.fun);
+            health = mContext.getString(R.string.health);
+            clothes = mContext.getString(R.string.clothes);
+            house = mContext.getString(R.string.house);
+            education = mContext.getString(R.string.education);
+            sport = mContext.getString(R.string.sport);
+            transport = mContext.getString(R.string.transport);
+            eating= mContext.getString(R.string.eating);
+
             Giderler giderler = giderlerList.get(position);
            holder.textViewYuzde.setText("%"+String.valueOf(giderlerList.get(position).getYüzde()));
             holder.textViewGiderTip.setText(giderlerList.get(position).getGiderAdı());
             holder.textViewSonuc.setText(String.valueOf(giderlerList.get(position).getTipBakiye()));
-            if(giderlerList.get(position).getGiderAdı().equals("Spor")){
+            if(giderlerList.get(position).getGiderAdı().equals(sport)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.sports);
             }
-            if(giderlerList.get(position).getGiderAdı().equals("Eğlence")){
+            if(giderlerList.get(position).getGiderAdı().equals(fun)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.laugh);
             }
-            if(giderlerList.get(position).getGiderAdı().equals("Beslenme")){
+            if(giderlerList.get(position).getGiderAdı().equals(eating)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.salad);
             }
-            if(giderlerList.get(position).getGiderAdı().equals("Ev")){
+            if(giderlerList.get(position).getGiderAdı().equals(house)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.house);
             }
-            if(giderlerList.get(position).getGiderAdı().equals("Eğitim")){
+            if(giderlerList.get(position).getGiderAdı().equals(education)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.education);
             }
-            if(giderlerList.get(position).getGiderAdı().equals("Giyim")){
+            if(giderlerList.get(position).getGiderAdı().equals(clothes)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.clothes);
             }
-            if(giderlerList.get(position).getGiderAdı().equals("Sağlık")){
+            if(giderlerList.get(position).getGiderAdı().equals(health)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.health);
             }
-            if(giderlerList.get(position).getGiderAdı().equals("Ulaşım")){
+            if(giderlerList.get(position).getGiderAdı().equals(transport)){
                 holder.imageViewGiderTip.setBackgroundResource(R.drawable.transport);
             }
 

@@ -51,6 +51,10 @@ int yüzdeSaglık;
 int toplamBakiye;
 int oran;
 private ArrayList<Giderler> giderlerList;
+private TextView expenseTypes;
+private TextView totalRevenue;
+private TextView totalExpense;
+
 
 
     @Override
@@ -61,6 +65,15 @@ private ArrayList<Giderler> giderlerList;
         tipModel = new ViewModelProvider(this).get(GelirViewModel.class);
         textViewGelir = findViewById(R.id.textViewGelir);
         textViewGider = findViewById(R.id.textViewGider);
+        expenseTypes = findViewById(R.id.textViewGiderTipleri);
+        totalExpense =findViewById(R.id.textView2);
+        totalRevenue =findViewById(R.id.textView);
+
+
+        expenseTypes.setText(getString(R.string.expense_name));
+        totalExpense.setText(getString(R.string.total_expense));
+        totalRevenue.setText(getString(R.string.total_revenue));
+
 
         rv2=findViewById(R.id.rv2);
         rv2.setHasFixedSize(true);
@@ -117,14 +130,24 @@ private ArrayList<Giderler> giderlerList;
 
 
                 textViewGider.setText("" + giderBakiye);
-                Giderler g1=  new Giderler("Eğlence","eglence",giderEglence,yüzdeEglence);
-                Giderler g2=  new Giderler("Eğitim","egitim",giderEgitim,yüzdeEgitim);
-                Giderler g3=  new Giderler("Ev","ev",giderEv,yüzdeEv);
-                Giderler g4=  new Giderler("Beslenme","beslenme",giderBeslenme,yüzdeBeslenme);
-                Giderler g5=  new Giderler("Spor","spor",giderSpor,yüzdeSpor);
-                Giderler g6=  new Giderler("Sağlık","saglık",giderSaglık,yüzdeSaglık);
-                Giderler g7=  new Giderler("Ulaşım","ulasım",giderUlasım,yüzdeUlasım);
-                Giderler g8=  new Giderler("Giyim","giyim",giderGiyim,yüzdeGiyim);
+                String fun = getString(R.string.fun);
+                String health = getString(R.string.health);
+                String clothes = getString(R.string.clothes);
+                String house = getString(R.string.house);
+                String education = getString(R.string.education);
+                String sport = getString(R.string.sport);
+                String transport = getString(R.string.transport);
+                String eating= getString(R.string.eating);
+
+
+                Giderler g1=  new Giderler(fun,"eglence",giderEglence,yüzdeEglence);
+                Giderler g2=  new Giderler(education,"egitim",giderEgitim,yüzdeEgitim);
+                Giderler g3=  new Giderler(house,"ev",giderEv,yüzdeEv);
+                Giderler g4=  new Giderler(eating,"beslenme",giderBeslenme,yüzdeBeslenme);
+                Giderler g5=  new Giderler(sport,"spor",giderSpor,yüzdeSpor);
+                Giderler g6=  new Giderler(health,"saglık",giderSaglık,yüzdeSaglık);
+                Giderler g7=  new Giderler(transport,"ulasım",giderUlasım,yüzdeUlasım);
+                Giderler g8=  new Giderler(clothes,"giyim",giderGiyim,yüzdeGiyim);
 
                 giderlerList =new ArrayList<>();
                 giderlerList.add(g1);

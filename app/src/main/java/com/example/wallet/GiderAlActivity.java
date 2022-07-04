@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 import com.example.wallet.DataBase.DatabaseProvider;
@@ -17,12 +19,16 @@ public class GiderAlActivity extends AppCompatActivity {
        Gider gider = new Gider();
        public WalletDatabase database2;
        String gelenTip;
+       private Button tamam;
+
 
 
      @Override
           protected void onCreate(Bundle savedInstanceState) {
               super.onCreate(savedInstanceState);
               setContentView(R.layout.activity_gider_al);
+              tamam = findViewById(R.id.tamam2);
+              tamam.setText(getString(R.string.okay));
               textGider = findViewById(R.id.textGider);
               gelenTip = getIntent().getStringExtra("giderTip");
               database2 = DatabaseProvider.getDatabase(getApplicationContext());

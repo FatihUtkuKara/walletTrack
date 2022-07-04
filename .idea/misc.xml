@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.129" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout-land/activity_ayrinti.xml" value="0.30687830687830686" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout-land/activity_gider.xml" value="0.30687830687830686" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout-land/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_ayrinti.xml" value="0.3572916666666667" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_gelir.xml" value="0.2359375" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/activity_gider.xml" value="0.264" />
@@ -13,6 +17,8 @@
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/cardtasarim.xml" value="0.25" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/fragment_gelir.xml" value="0.264" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/layout/gidertasarim.xml" value="0.3572916666666667" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/menu/toolbar_menu.xml" value="0.33" />
+        <entry key="..\:/Users/fatih/AndroidStudioProjects/Internship/Wallet/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.123" />
         <entry key="..\:/Users/fatih/AndroidStudioProjects/Wallet/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_ayrinti.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_gelir.xml" value="0.1" />
