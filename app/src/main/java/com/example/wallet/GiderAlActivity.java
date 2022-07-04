@@ -1,6 +1,7 @@
 package com.example.wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,14 +21,21 @@ public class GiderAlActivity extends AppCompatActivity {
        public WalletDatabase database2;
        String gelenTip;
        private Button tamam;
+    private Toolbar toolbar;
 
 
 
-     @Override
+
+    @Override
           protected void onCreate(Bundle savedInstanceState) {
               super.onCreate(savedInstanceState);
               setContentView(R.layout.activity_gider_al);
-              tamam = findViewById(R.id.tamam2);
+         toolbar = findViewById(R.id.toolbar);
+         toolbar.setTitle(getString(R.string.app_name));
+         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tamam = findViewById(R.id.tamam2);
               tamam.setText(getString(R.string.okay));
               textGider = findViewById(R.id.textGider);
               gelenTip = getIntent().getStringExtra("giderTip");

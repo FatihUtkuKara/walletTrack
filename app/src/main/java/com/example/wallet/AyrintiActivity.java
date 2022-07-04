@@ -1,6 +1,7 @@
 package com.example.wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,7 +24,6 @@ import java.util.List;
 
 public class AyrintiActivity extends AppCompatActivity {
 private RecyclerView rv2;
-private ArrayList<Giderler> giderlerArrayList;
 private GiderAdapter adapter;
 private GelirViewModel tipModel;
 int tipBakiye;
@@ -48,12 +48,13 @@ int yüzdeEgitim;
 int yüzdeUlasım;
 int yüzdeGiyim;
 int yüzdeSaglık;
-int toplamBakiye;
-int oran;
+
 private ArrayList<Giderler> giderlerList;
 private TextView expenseTypes;
 private TextView totalRevenue;
 private TextView totalExpense;
+    private Toolbar toolbar;
+
 
 
 
@@ -61,6 +62,10 @@ private TextView totalExpense;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ayrinti);
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tipBakiye = 1;
         tipModel = new ViewModelProvider(this).get(GelirViewModel.class);
         textViewGelir = findViewById(R.id.textViewGelir);
@@ -92,41 +97,41 @@ private TextView totalExpense;
                 for (int i = 0; i < giders.size(); i++) {
                     giderBakiye = giderBakiye + giders.get(i).giderAmount;
 
-                    if (giders.get(i).giderTipi.equals("Eğlence")){
+                    if (giders.get(i).giderTipi.equals(getString(R.string.fun))){
                         giderEglence= giderEglence+giders.get(i).giderAmount;
                     }
-                    else if (giders.get(i).giderTipi.equals("Ev")){
+                    else if (giders.get(i).giderTipi.equals(getString(R.string.house))){
                         giderEv= giderEv+giders.get(i).giderAmount;
                     }
-                    else if (giders.get(i).giderTipi.equals("Spor")){
+                    else if (giders.get(i).giderTipi.equals(getString(R.string.sport))){
                         giderSpor= giderSpor+giders.get(i).giderAmount;
 
                     }
-                    else if (giders.get(i).giderTipi.equals("Eğitim")){
+                    else if (giders.get(i).giderTipi.equals(getString(R.string.education))){
                         giderEgitim= giderEgitim+giders.get(i).giderAmount;
                     }
-                    else if (giders.get(i).giderTipi.equals("Beslenme")){
+                    else if (giders.get(i).giderTipi.equals(getString(R.string.eating))){
                         giderBeslenme= giderBeslenme+giders.get(i).giderAmount;
                     }
-                    else if (giders.get(i).giderTipi.equals("Sağlık")){
+                    else if (giders.get(i).giderTipi.equals(getString(R.string.health))){
                         giderSaglık= giderSaglık+giders.get(i).giderAmount;
                     }
-                    else if (giders.get(i).giderTipi.equals("Ulaşım")){
+                    else if (giders.get(i).giderTipi.equals(getString(R.string.transport))){
                         giderUlasım= giderUlasım+giders.get(i).giderAmount;
                     }
-                    else if (giders.get(i).giderTipi.equals("Giyim")){
+                    else if (giders.get(i).giderTipi.equals(getString(R.string.clothes))){
                         giderGiyim= giderGiyim+giders.get(i).giderAmount;
                     }
 
                 }
-                yüzdeEglence = (giderEglence*100)/giderBakiye;
-                yüzdeEv = (giderEv*100)/giderBakiye;
-                yüzdeSpor= (giderSpor*100)/giderBakiye;
-                yüzdeEgitim = (giderEgitim*100)/giderBakiye;
-                yüzdeBeslenme = (giderBeslenme*100)/giderBakiye;
-                yüzdeUlasım = (giderUlasım*100)/giderBakiye;
-                yüzdeSaglık = (giderSaglık*100)/giderBakiye;
-                yüzdeGiyim = (giderGiyim*100)/giderBakiye;
+                yüzdeEglence = (int) ((float) giderEglence / (float) giderBakiye *100f);
+                yüzdeEv = (int) ((float) giderEv / (float) giderBakiye *100f);
+                yüzdeSpor= (int) ((float) giderSpor / (float) giderBakiye *100f);
+                yüzdeEgitim = (int) ((float) giderEgitim / (float) giderBakiye *100f);
+                yüzdeBeslenme = (int) ((float) giderBeslenme / (float) giderBakiye *100f);
+                yüzdeUlasım =(int) ((float) giderUlasım / (float) giderBakiye *100f);
+                yüzdeSaglık = (int) ((float) giderSaglık / (float) giderBakiye *100f);
+                yüzdeGiyim = (int) ((float) giderGiyim / (float) giderBakiye *100f);
 
 
                 textViewGider.setText("" + giderBakiye);

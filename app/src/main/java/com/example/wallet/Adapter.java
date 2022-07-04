@@ -44,7 +44,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CardTasarımNesnelerin
         holder.cardViewId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, giderTipleri.getGiderAdı() +" Seçildi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, giderTipleri.getGiderAdı() +" "+mContext.getString(R.string.selected), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, GiderAlActivity.class);
 
                 intent.putExtra("giderTip",giderTipleri.getGiderAdı());

@@ -17,6 +17,7 @@
     <string name="total_expense">Total Expense</string>
     <string name="income_input">Enter Your Income</string>
     <string name="expense_input">Enter Your Expense</string>
+    <string name="selected"> selected</string>
 
 
 </resources>

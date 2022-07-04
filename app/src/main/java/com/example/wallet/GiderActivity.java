@@ -1,6 +1,7 @@
 package com.example.wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,11 +13,16 @@ public class GiderActivity extends AppCompatActivity {
     private RecyclerView rv;
     private ArrayList<GiderTipleri> giderlerList;
     private Adapter adapter;
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gider);
-
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         rv = findViewById(R.id.rv);
         rv.setHasFixedSize(true);
 
@@ -31,14 +37,15 @@ public class GiderActivity extends AppCompatActivity {
         String transport = getString(R.string.transport);
         String eating= getString(R.string.eating);
 
-        GiderTipleri g1 = new GiderTipleri(eating,"salad");
+        GiderTipleri g5 = new GiderTipleri(clothes,"clothes");
         GiderTipleri g2 = new GiderTipleri(fun,"laugh");
         GiderTipleri g3 = new GiderTipleri(sport,"sports");
         GiderTipleri g4 = new GiderTipleri(education,"education");
-        GiderTipleri g5 = new GiderTipleri(house,"house");
+        GiderTipleri g1 = new GiderTipleri(house,"house");
         GiderTipleri g6 = new GiderTipleri(health,"health");
         GiderTipleri g7 = new GiderTipleri(transport,"transport");
-        GiderTipleri g8 = new GiderTipleri(clothes,"clothes");
+        GiderTipleri g8 = new GiderTipleri(eating,"salad");
+
 
         giderlerList = new ArrayList<>();
         giderlerList.add(g1);

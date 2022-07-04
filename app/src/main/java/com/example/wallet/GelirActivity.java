@@ -1,6 +1,7 @@
 package com.example.wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -21,7 +22,9 @@ import com.example.wallet.viewModel.GelirViewModel;
 import java.util.List;
 
 public class GelirActivity extends AppCompatActivity {
-        public EditText textGelir;
+    private Toolbar toolbar;
+
+    public EditText textGelir;
         Gelir gelir = new Gelir();
         public WalletDatabase database;
         private Button tamam;
@@ -30,6 +33,11 @@ public class GelirActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gelir);
+
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tamam = findViewById(R.id.gelirButton);
         tamam.setText(getString(R.string.okay));
         textGelir = findViewById(R.id.textGelir);
